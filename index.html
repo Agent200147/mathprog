@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="/mathprog/assets/tabler_math-function-Er45gdTu.png" type="image/x-icon">
+    <title>Mathprog</title>
+  <script type="module" crossorigin src="/mathprog/assets/index-xVNS-Phi.js"></script>
+  <link rel="stylesheet" crossorigin href="/mathprog/assets/index-5BvYYpGs.css">
+</head>
+<body>
+<header class="header">
+    <div class="header__wrapper">
+        <h1>Математическое программирование</h1>
+    </div>
+</header>
+<div class="wrapper firstTab">
+    <div class="firsTab__wrapper">
+        <form action="" method="post" id="form1" class="form">
+            <div class="commonData main-block">
+                <h2 class="title commonData__title text-medium">Общие входные данные:</h2>
+                <div class="commonData__inputs">
+                    <div class="function">
+                        Функция: <input required autocomplete="off" list="function" id="function-input" type="text" placeholder="(x + 2y - 7)^2 + (2x + y -5)^2" name="fnInput" class="fn"/>
+                        <datalist id="function">
+                            <option data-border="1-6" value="(x + 2y - 7)^2 + (2x + y -5)^2">(x + 2y - 7)^2 + (2x + y -5)^2 - Функция Бута (-10; 10), xyf[1,3,0]</option>
+                            <option selected value="4x^2 - 2.1x^4 + x^6/3 + x*y - 4y^2 + 4y^4">4x^2 - 2.1x^4 + x^6/3 + x*y - 4y^2 + 4y^4 - Шестигорбый верблюд (-5; 5), xyf[0.08984, -0.71265, -1,03163]</option>
+                            <option value="2x^2 - 1.05x^4 + x^6/3 + x*y + y^2">2x^2 - 1.05x^4 + x^6/3 + x*y + y^2 - Трехгорбый верблюд (-5; 5) xyf[0,0,0]</option>
+                            <option value="0.26(x^2 + y^2) - 0.48x*y">0.26(x^2 + y^2) - 0.48x*y - Функция Матиаса (-10; 10) xyf[0,0,0]</option>
+                            <option value="x^2 + y^2 - cos(12x) - cos(18y)">x^2 + y^2 - cos(12x) - cos(18y) - Функция Растригина (-1; 1) xyf[0,0,-2]</option>
+                            <option value="(x^2 + y^2)/200 - cos(x)*cos(y/sqrt(2)) + 1">(x^2 + y^2)/200 - cos(x)*cos(y/sqrt(2)) + 1 - Функция Гриванка 2 (-100; 100) xyf[0,0,0]</option>
+                            <option value="x^4 + 4x^3 + 4x^2 + y^2">x^4 + 4x^3 + 4x^2 + y^2 - Функция Треккани (-5; 5) xyf[0/-2,0,0]</option>
+                            <option value="sin(x+y) + (x+y)^2 - 1.5x + 2.5y + 1">sin(x+y) + (x+y)^2 - 1.5x + 2.5y + 1 - Функция Маккормика (-1.5; 4)(-3; 3) xyf[0,0,1]</option>
+                            <option value="100(y - y^2)^2 + (1 - x)^2 + 90(z - k^2)^2 + (1 - k)^2 + 10.1((y-1)^2 + (z - 1)^2 + 19.8(y - 1)(z - 1))">100(y - y^2)^2 + (1 - x)^2 + 90(z - k^3)^2 + (1 - k)^2 + 10.1((y-1)^2 + (z - 1)^2 + 19.8(y - 1)(z - 1)) - Функция Колвиля 4 (-1.5; 4)(-3; 3) xyf[1,1,1,1, 0]</option>
+                            <option value="(2x^3 * y - y^3)^2 + (6x - y^2 + y)^2">(2x^3 * y - y^3)^2 + (6x - y^2 + y)^2 - Функция Прайса (-10; 10) xyf[0/2,0/4,0]</option>
+                        </datalist>
+                    </div>
+
+                    <div class="borders borders2" id="borders">
+                    </div>
+                    <div class="methodsList">
+                        Методы:<b></b>
+                        <div class="checkboxes">
+
+                            <div class="checkboxes__item">
+                                <label for="monteKarlo">Монте-Карло</label>
+                                <input class="methodFlag" type="checkbox" id="monteKarlo">
+                            </div>
+
+                            <div class="checkboxes__item">
+                                <label for="annealing">Имитация отжига</label>
+                                <input class="methodFlag" type="checkbox" id="annealing">
+                            </div>
+
+                            <div class="checkboxes__item">
+                                <label for="ga">Генетический алгоритм</label>
+                                <input class="methodFlag" type="checkbox" id="ga">
+                            </div>
+                            <div class="checkboxes__item">
+                                <label for="in">Интервальный метод</label>
+                                <input class="methodFlag" type="checkbox" id="in">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="methods">
+                <div class="monteKarlo main-block section" id="monteKarlo-section">
+                    <h2 class="title commonData__title text-medium">Монте-Карло:</h2>
+                    <input  type="text" data-autocomplete="100000" placeholder="Кол-во итераций" name="monteIteration"/>
+                </div>
+                <div class="annealing main-block section" id="annealing-section">
+                    <h2 class="title commonData__title text-medium">Имитация отжига:</h2>
+                    <div class="annealing__inputs">
+                        <input  type="text" data-autocomplete="500" placeholder="Tmax" name="annealingT"/>
+                        <input  type="text" data-autocomplete="0.1" placeholder="r" name="annealingR"/>
+                        <input  type="text" data-autocomplete="10000" placeholder="L" name="annealingL"/>
+                    </div>
+                </div>
+                <div class="ga main-block section" id="ga-section">
+                    <h2 class="title commonData__title text-medium">Генетический алгоритм:</h2>
+                    <div class="inputs2">
+                        <div>
+                            Размер начальной популяции: <input  type="text" data-autocomplete="80" placeholder="20-100" name="k"/>
+                        </div>
+                        <div>
+                            Количество потомков каждой популяции: <input  type="text" data-autocomplete="1000" placeholder="" name="k2"/>
+                        </div>
+                        <div>
+                            Количество поколений: <input  type="text" data-autocomplete="100" placeholder="" name="n"/>
+                        </div>
+
+                        <div>
+                            Шанс мутации: <input  type="text" data-autocomplete="0.1" placeholder="" name="p"/>
+                        </div>
+                    </div>
+
+                    <div class="checkboxes">
+                        Критерии останова:
+                        <div class="checkboxes__item">
+                            <label for="flagIter">Итерации</label>
+                            <input type="checkbox" name="flagIter" id="flagIter">
+                        </div>
+
+                        <div class="checkboxes__item">
+                            <label for="flagEps">Точность</label>
+                            <input type="checkbox" name="flagEps" id="flagEps">
+                        </div>
+                    </div>
+                    <div id="eps">
+                        <input type="text" data-autocomplete="0.000001" placeholder="Введите точность" name="eps" class="eps-input">
+                        или
+                        <div class="checkboxes__item checkboxes__item-eps">
+                            <label for="flagMachineEps">Машинная точность</label>
+                            <input type="checkbox" name="flagMachineEps" id="flagMachineEps">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="in main-block section" id="in-section">
+                    <h2 class="title commonData__title text-medium">Интервальный метод:</h2>
+                    <input  type="text" data-autocomplete="0.000001" placeholder="Ширина бруса" name="InEps"/>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button type="submit" class="btn btn-submit" id="btnSubmit1">Начать подсчет!</button>
+                <!--            <button type="button" class="btn btn-submit" id="btnStop">Стоп</button>-->
+                <button type="button" class="btn btn-clear" id="btnClear1">Очистить результаты</button>
+                <button type="button" class="btn btn-reset" id="btnReset1">Сбросить форму</button>
+            </div>
+        </form>
+
+        <section class="results">
+            <div class="laba__results" id="resultMonte">
+
+            </div>
+        </section>
+    </div>
+
+</div>
+</body>
+</html>
