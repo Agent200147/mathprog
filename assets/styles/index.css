@@ -247,10 +247,6 @@ body{
     font-family: "InterThin", sans-serif;
 }
 
-form{
-    /*margin-top: 150px;*/
-}
-
 form input:not([type="checkbox"]){
     padding-inline: 12px;
     font-size: 24px;
@@ -265,7 +261,7 @@ form input:not([type="checkbox"]):focus{
     outline: 2px solid black;
 }
 
-h1.title{
+h1.title {
     margin: 60px auto;
     font-size: 48px;
     text-align: center;
@@ -295,7 +291,6 @@ h2.title{
 .methods.monteKarlo .monteKarlo, .methods.annealing .annealing, .methods.ga .ga, .methods.in .in{
     display: flex;
 }
-
 
 
 .main-block{
@@ -604,7 +599,7 @@ datalist option{
 
 }
 
-.anneal-progress{
+.annealing-progress{
     transition: 0.5s all ease-in-out;
 }
 
