@@ -125,7 +125,8 @@ onmessage = function(e) {
                 }
             }
 
-            postMessage(`translateY(${ -(i / n * 226)}px)`)
+            // postMessage(`translateY(${ -(i / n * 226)}px)`)
+            postMessage(i / n * 100)
         }
 
         const f = pop[0][borders.length]

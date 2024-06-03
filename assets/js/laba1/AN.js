@@ -38,7 +38,8 @@ onmessage = function(e) {
             for (let i = 0; i < L; i++) {
                 variablesMin = step(borders, fnInput, T, ...variablesMin)
             }
-            postMessage(`translateY(${-((i+2) / (sum) * 226)}px)`)
+            // postMessage(`translateY(${-((i+2) / (sum) * 226)}px)`)
+            postMessage((i + 2) / sum * 100)
             i++
             T *= r
         }

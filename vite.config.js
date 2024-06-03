@@ -1,3 +1,3 @@
 export default {
-    base: '/mathprog/',
+    base: 'https://agent200147.github.io/mathprog/',
 }

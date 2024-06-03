@@ -18,7 +18,8 @@ onmessage = function(e) {
                 f = currentValue
                 variablesMin = [...variables]
             }
-            postMessage(`translateY(${-i / N * 226}px)`)
+            // postMessage(`translateY(${-i / N * 226}px)`)
+            postMessage(i/N*100)
         }
 
         const end = new Date().getTime()
